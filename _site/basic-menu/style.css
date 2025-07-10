@@ -1,0 +1,153 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20vh;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.menu:focus-within .menu-main {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.menu-main ul,
+.menu-main li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-main {
+    display: flex;
+    background: aliceblue;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    overflow: auto;
+    opacity: 0;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.75rem;
+}
+
+.menu-item:hover > .menu-link,
+.menu-item:focus-within > .menu-link {
+    text-decoration: underline;
+}
+
+.menu-submenu-link {
+    display: block;
+    padding: 0.5rem 2rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.menu-submenu-item:hover > .menu-submenu-link,
+.menu-submenu-item:focus-within > .menu-submenu-link {
+    text-decoration: underline;
+}
+
+.menu-hamburger,
+.menu-close {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 1rem;
+    color: #000;
+}
+
+.menu-close {
+    display: none;
+}
+
+.has-menu:has(.menu:focus-within) .menu-close {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .menu-close,
+    .menu-hamburger {
+        display: none;
+    }
+
+    .menu {
+        position: sticky;
+        top: 0;
+    }
+
+    .menu-main {
+        flex-direction: row;
+        position: sticky;
+        top: 0;
+        left: revert;
+        right: revert;
+        bottom: revert;
+        pointer-events: revert;
+        overflow: revert;
+    }
+
+    .menu-main {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .menu-link {
+        font-size: 1rem;
+    }
+
+    .menu-submenu-link {
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-submenu {
+        position: absolute;
+        top: 100%;
+        background: green;
+        min-width: 10rem;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(2rem);
+        transition:
+            opacity 0.2s ease-in-out,
+            transform 0.2s ease-in-out;
+    }
+
+    .menu-item:hover > .menu-submenu,
+    .menu-item:focus-within > .menu-submenu {
+        pointer-events: all;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-item:has(.menu-submenu) .menu-link:after {
+        content: '\2193';
+        padding-left: 0.5rem;
+    }
+
+    .has-menu:has(.menu:focus-within) .menu-close {
+        display: none;
+    }
+}

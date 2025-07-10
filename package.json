@@ -1,0 +1,19 @@
+{
+    "name": "html-tricks",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "eleventy --serve --watch",
+        "format": "prettier . --write"
+    },
+    "author": "disjfa",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@11ty/eleventy": "^3.1.2"
+    },
+    "devDependencies": {
+        "prettier": "3.6.2"
+    }
+}
