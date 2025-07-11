@@ -1,0 +1,146 @@
+---
+title: Basic Menu, but with tailwind
+layout: base
+javascript:
+- https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4
+---
+
+<div class="container mx-auto max-w-3xl">
+    <h1 class="text-4xl font-bold mb-4 text-gray-800">This is a basic menu</h1>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        So this is a basic menu. It's not very fancy, but it's a good start. I do not want to get started with
+        javascript just yet. So lets just built this with css. It started out in 1997 when people liked the idea of a
+        hamburger menu. But there was no screen where that fit. But the menu still looks like this these days. But there
+        are some upgrades that can be made. We have responsive design now. So we can make the menu look good on mobile
+        devices. Also add some sticky data.
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        let's make some menus!
+    </p>
+    <br>
+    <hr>
+    <br>
+    <nav class="group/menu">
+        <a href="#" class="menu-hamburger">☲</a>
+        <ul class="flex bg-blue-100 flex-col fixed top-4 left-4 right-4 bottom-4 overflow-auto opacity-0 pointer-events-none group-focus-within/menu:pointer-events-auto group-focus-within/menu:opacity-100 md:pointer-events-auto md:opacity-100 md:sticky   md:flex-row md:overflow-visible">
+            <li class="relative">
+            <a href="#" class="block px-4 py-2 text-3xl hover:underline md:text-base">Home</a>
+            </li>
+            <li class="relative">
+                <a href="#" class="block px-4 py-2 text-3xl hover:underline  md:text-base">Products</a>
+                <ul class="md:absolute md:top-full md:left-0 md:w-full md:bg-blue-200 md:min-w-48">
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Product 1</a>
+                    </li>
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Product 2</a>
+                    </li>
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Product 3</a>
+                    </li>
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Product 4</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="relative">
+                <a href="#" class="block px-4 py-2 text-3xl hover:underline  md:text-base">About</a>
+            </li>
+            <li class="relative">
+                <a href="#" class="block px-4 py-2 text-3xl hover:underline  md:text-base">Services</a>
+                <ul class="md:absolute md:top-full md:left-0 md:w-full md:bg-blue-200 md:min-w-48">
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Service 1</a>
+                    </li>
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Service 2</a>
+                    </li>
+                    <li class="menu-submenu-item">
+                        <a href="#" class="block px-8 py-2 hover:underline md:px-4">Service 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="relative">
+                <a href="#contact" class="block px-4 py-2 text-3xl hover:underline  md:text-base">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <a href="#" class="menu-close">&times;</a>
+    <br><br>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum sagittis leo id elementum. Pellentesque
+        ullamcorper maximus diam, sed laoreet mauris pharetra sed. Proin eu imperdiet urna, sit amet gravida enim.
+        Pellentesque elementum ac neque ac posuere. Integer rhoncus pretium libero, sed rhoncus dui porttitor et.
+        Suspendisse auctor ipsum sit amet orci maximus facilisis. Nulla facilisi. Maecenas eget eleifend turpis.
+        Pellentesque ultricies eu neque sit amet elementum.
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        Suspendisse sapien dolor, convallis quis quam sed, porta luctus elit. Morbi vel maximus nibh. Nullam in tempus
+        mauris, in efficitur tortor. Pellentesque luctus tellus a mi pharetra luctus. Fusce mollis aliquet neque, vitae
+        dignissim nisl luctus id. Maecenas iaculis tincidunt justo, a lacinia ipsum vestibulum eu. Donec eget fermentum
+        odio, non imperdiet est. Nullam sodales dui at convallis aliquam.
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        Donec erat sapien, elementum efficitur risus non, congue vehicula quam. Nullam sed lobortis enim. Phasellus eu
+        nisi lacus. Maecenas vitae mauris eget turpis auctor feugiat. Nullam non quam egestas risus dapibus convallis eu
+        at lacus. Phasellus pharetra faucibus ex ac placerat. Duis in metus quis eros tincidunt vehicula eget et enim.
+        Curabitur semper porta risus, vel aliquam mauris rutrum non. Duis ac nunc non purus rutrum tincidunt quis sit
+        amet orci.
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        Quisque sit amet ornare metus, dignissim rhoncus enim. Vestibulum scelerisque diam ac interdum lacinia. Quisque
+        eu mollis nibh, ac dignissim felis. Nam eget imperdiet diam, nec ultricies ex. Nunc auctor porta enim, viverra
+        sagittis sapien volutpat eget. Vestibulum aliquam hendrerit est. Nunc imperdiet eros eget pulvinar imperdiet.
+        Aliquam erat volutpat. Pellentesque nec eleifend massa. In aliquam tristique nisl. Aliquam augue eros, sagittis
+        sit amet nisi ac, dictum lacinia tellus. Nullam volutpat odio in ex molestie faucibus. Integer ante nisi,
+        pretium a risus ut, dapibus sodales eros. Quisque ut nisl dolor. Nullam egestas, nunc eget egestas aliquet,
+        ipsum diam maximus libero, ac interdum urna diam ut ligula.
+    </p>
+    <h3 id="contact" class="text-2xl font-semibold mb-3 text-gray-800">Contact</h3>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        Pellentesque venenatis ipsum elit, ac porttitor tellus luctus sit amet. Suspendisse consectetur porttitor
+        scelerisque. Mauris id tortor id massa consequat consectetur. Sed consectetur cursus tellus, et condimentum mi
+        tristique ac. Nam quis ultrices sem. Phasellus sed semper turpis. Fusce ultricies enim rutrum mauris mattis
+        dignissim.
+    </p>
+
+    <p class="text-gray-700 mb-4 leading-relaxed">
+        Quisque ut pretium mauris, eget fermentum dui. Donec sed quam leo. Pellentesque tristique nisi in odio
+        consequat, in dictum velit gravida. Donec tincidunt libero justo, in pellentesque risus varius commodo. Integer
+        malesuada, dui nec porta dapibus, justo risus feugiat tellus, a rutrum tellus orci in nisl. Morbi bibendum
+        varius urna. Fusce ex elit, sodales vel lacus nec, tempor blandit sem. Nam egestas risus ut nibh porttitor
+        bibendum. Praesent accumsan tempor libero consectetur iaculis. Quisque risus lectus, viverra in tortor ac,
+        bibendum lobortis dui. Donec nec metus accumsan, semper augue ut, pharetra diam. Donec fringilla enim eget risus
+        eleifend aliquet. Aliquam vulputate augue nec consectetur sodales. Nulla a ligula ac elit interdum imperdiet id
+        quis enim. Fusce pharetra mollis sem a efficitur.
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+
+        Sed eget odio vel ipsum placerat dignissim non nec leo. Curabitur vestibulum, justo vitae commodo scelerisque,
+        sapien eros placerat diam, vel dignissim justo metus vel urna. Curabitur id massa vel enim pharetra facilisis.
+        Nullam interdum porttitor leo ac rutrum. Sed placerat porta laoreet. Aliquam consectetur, lacus nec feugiat
+        fringilla, enim urna vulputate urna, ut consectetur elit nulla sed felis. Vestibulum ante ipsum primis in
+        faucibus orci luctus et ultrices posuere cubilia curae;
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque egestas et massa
+        ut efficitur. Donec elementum eleifend magna et pharetra. Sed convallis, justo quis mollis tempor, neque lectus
+        rutrum lorem, quis eleifend est dolor id enim. Suspendisse potenti. Duis tempor, est egestas vulputate
+        consectetur, eros sapien euismod sem, sit amet sodales tellus velit at erat. Praesent risus eros, varius in
+        ultrices non, sodales id nibh. Vivamus vel laoreet erat. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer vitae quam blandit turpis volutpat suscipit. Quisque eu pharetra sapien.
+        Morbi vehicula felis at viverra rhoncus. Morbi eget nisl velit. Etiam ultricies tincidunt augue, ut eleifend
+        augue posuere ut.
+    </p>
+    <p class="text-gray-700 mb-4 leading-relaxed">
+
+        Sed ut arcu sodales, tincidunt lorem convallis, mollis est. Fusce eget lacinia arcu. Duis quis eros et libero
+        tristique vehicula quis in massa. Nulla id lorem vulputate, commodo massa ut, maximus libero. Etiam mattis
+        maximus risus, ut consectetur metus pharetra sed. Aenean tempor ut eros et tempor. Cras finibus lacus et
+        ultrices rhoncus. Cras molestie, felis ac rhoncus rutrum, mi massa porta leo, vel viverra purus lacus at nunc.
+        Aliquam nunc velit, eleifend sit amet felis sed, pellentesque tincidunt sem. Nullam consectetur lacus eros, eget
+        fringilla augue auctor eget. Proin posuere tempus risus eu maximus. Cras et purus ac augue gravida fringilla.
+        Praesent vitae urna vitae odio finibus venenatis.
+    </p>
+</div>
