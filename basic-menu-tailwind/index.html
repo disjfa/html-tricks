@@ -4,252 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Basic Menu | Html tricks</title>
+    <title>Basic Menu, but with tailwind | Html tricks</title>
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap-reboot.min.css">
     
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
 </head>
 <body>
-<style>
-  html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 20vh;
-}
-
-.container {
-  padding: 1rem;
-  max-width: 992px;
-  margin: 0 auto;
-}
-
-.menu:focus-within .menu-main {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.menu-main ul,
-.menu-main li {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-main {
-  display: flex;
-  background: aliceblue;
-  margin: 0;
-  padding: 0;
-  flex-direction: column;
-  transition: opacity 0.2s ease-in-out;
-  pointer-events: none;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  overflow: auto;
-  opacity: 0;
-}
-
-.menu-item {
-  position: relative;
-}
-
-.menu-link {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #000;
-  text-decoration: none;
-  font-size: 1.75rem;
-}
-
-.menu-item:hover > .menu-link,
-.menu-item:focus-within > .menu-link {
-  text-decoration: underline;
-}
-
-.menu-submenu-link {
-  display: block;
-  padding: 0.5rem 2rem;
-  color: #000;
-  text-decoration: none;
-}
-
-.menu-submenu-item:hover > .menu-submenu-link,
-.menu-submenu-item:focus-within > .menu-submenu-link {
-  text-decoration: underline;
-}
-
-.menu-hamburger,
-.menu-close {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  padding: 1rem;
-  text-decoration: none;
-  font-size: 2rem;
-  line-height: 1rem;
-  color: #000;
-}
-
-.menu-close {
-  display: none;
-}
-
-.has-menu:has(.menu:focus-within) .menu-close {
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .menu-close,
-  .menu-hamburger {
-    display: none;
-  }
-
-  .menu {
-    position: sticky;
-    top: 0;
-  }
-
-  .menu-main {
-    flex-direction: row;
-    position: sticky;
-    top: 0;
-    left: revert;
-    right: revert;
-    bottom: revert;
-    pointer-events: revert;
-    overflow: revert;
-  }
-
-  .menu-main {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .menu-link {
-    font-size: 1rem;
-  }
-
-  .menu-submenu-link {
-    padding: 0.5rem 1rem;
-  }
-
-  .menu-submenu {
-    position: absolute;
-    top: 100%;
-    background: green;
-    min-width: 10rem;
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(2rem);
-    transition:
-      opacity 0.2s ease-in-out,
-      transform 0.2s ease-in-out;
-  }
-
-  .menu-item:hover > .menu-submenu,
-  .menu-item:focus-within > .menu-submenu {
-    pointer-events: all;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .menu-item:has(.menu-submenu) .menu-link:after {
-    content: "\2193";
-    padding-left: 0.5rem;
-  }
-
-  .has-menu:has(.menu:focus-within) .menu-close {
-    display: none;
-  }
-}
-
-</style>
-
-<div class="container has-menu">
-  <h1>This is a basic menu</h1>
-  <p>
-    So this is a basic menu. It's not very fancy, but it's a good start. I do not want to get started with javascript
-    just yet. So lets just built this with css. It started out in 1997 when people liked the idea of a hamburger menu.
-    But there was no screen where that fit. But the menu still looks like this these days. But there are some upgrades
-    that can be made. We have responsive design now. So we can make the menu look good on mobile devices. Also add some
-    sticky data.
+<div class="container mx-auto max-w-3xl p-4">
+  <h1 class="mb-4 text-4xl font-bold text-gray-800">This is a basic menu</h1>
+  <p class="mb-4 leading-relaxed text-gray-700">
+    So this is a basic menu. Again. But this time it's with Tailwind. We can figure it out.
   </p>
-  <p>let's make some menus!</p>
+  <p class="mb-4 leading-relaxed text-gray-700">
+    Just not so sure about the close button. I's searching for a <code>body:has(:focus-within) menu-close{}</code> class. If you know please let me know.
+  </p>
+  <p class="mb-4 leading-relaxed text-gray-700">let's make some menus!</p>
   <br>
   <hr>
   <br>
-  <nav class="menu">
-    <a href="#" class="menu-hamburger">☲</a>
-    <ul class="menu-main">
-      <li class="menu-item">
-        <a href="#" class="menu-link">Home</a>
-      </li>
-      <li class="menu-item">
-        <a href="#" class="menu-link">Products</a>
-        <ul class="menu-submenu">
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Product 1</a>
-          </li>
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Product 2</a>
-          </li>
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Product 3</a>
-          </li>
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Product 4</a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="#" class="menu-link">About</a>
-      </li>
-      <li class="menu-item">
-        <a href="#" class="menu-link">Services</a>
-        <ul class="menu-submenu">
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Service 1</a>
-          </li>
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Service 2</a>
-          </li>
-          <li class="menu-submenu-item">
-            <a href="#" class="menu-submenu-link">Service 3</a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="#contact" class="menu-link">Contact</a>
-      </li>
-    </ul>
-  </nav>
-  <a href="#" class="menu-close">&times;</a>
+  <nav class="group/menu">
+  <a href="#" class="fixed right-4 top-4 bg-blue-100 p-4 leading-none md:hidden">
+    ☲
+  </a>
+  <ul class="pointer-events-none fixed bottom-4 left-4 right-4 top-4 flex flex-col overflow-auto bg-blue-100 opacity-0 group-focus-within/menu:pointer-events-auto group-focus-within/menu:opacity-100 md:pointer-events-auto md:sticky md:flex-row md:overflow-visible md:opacity-100">
+    <li class="relative">
+      <a href="#" class="block px-4 py-2 text-3xl hover:underline md:text-base">
+        Home
+      </a>
+    </li>
+    <li class="group/item relative">
+      <a href="#" class="block px-4 py-2 text-3xl hover:underline md:text-base md:after:content-['_↓']">
+        Products
+      </a>
+      <ul class="md:pointer-events-none md:absolute md:left-0 md:top-full md:w-full md:min-w-48 md:translate-y-12 md:bg-blue-200 md:opacity-0 md:transition-opacity md:transition-transform md:group-focus-within/item:pointer-events-auto md:group-focus-within/item:translate-y-0 md:group-focus-within/item:opacity-100 md:group-hover/item:pointer-events-auto md:group-hover/item:translate-y-0 md:group-hover/item:opacity-100">
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Product 1
+          </a>
+        </li>
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Product 2
+          </a>
+        </li>
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Product 3
+          </a>
+        </li>
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Product 4
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="relative">
+      <a href="#" class="block px-4 py-2 text-3xl hover:underline md:text-base">
+        About
+      </a>
+    </li>
+    <li class="group/item relative">
+      <a href="#" class="block px-4 py-2 text-3xl hover:underline md:text-base md:after:content-['_↓']">
+        Services
+      </a>
+      <ul class="md:pointer-events-none md:absolute md:left-0 md:top-full md:w-full md:min-w-48 md:translate-y-12 md:bg-blue-200 md:opacity-0 md:transition-opacity md:transition-transform md:group-focus-within/item:pointer-events-auto md:group-focus-within/item:translate-y-0 md:group-focus-within/item:opacity-100 md:group-hover/item:pointer-events-auto md:group-hover/item:translate-y-0 md:group-hover/item:opacity-100">
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Service 1
+          </a>
+        </li>
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Service 2
+          </a>
+        </li>
+        <li class="menu-submenu-item">
+          <a href="#" class="block px-8 py-2 hover:underline md:px-4">
+            Service 3
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="relative">
+      <a href="#contact" class="block px-4 py-2 text-3xl hover:underline md:text-base">
+        Contact
+      </a>
+    </li>
+  </ul>
+</nav>
+<a href="#" class="fixed right-4 top-4 hidden bg-gray-200 p-4 leading-none md:hidden">
+  &times;
+</a>
+
   <br>
   <br>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum sagittis leo id elementum. Pellentesque
     ullamcorper maximus diam, sed laoreet mauris pharetra sed. Proin eu imperdiet urna, sit amet gravida enim.
     Pellentesque elementum ac neque ac posuere. Integer rhoncus pretium libero, sed rhoncus dui porttitor et.
     Suspendisse auctor ipsum sit amet orci maximus facilisis. Nulla facilisi. Maecenas eget eleifend turpis.
     Pellentesque ultricies eu neque sit amet elementum.
   </p>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Suspendisse sapien dolor, convallis quis quam sed, porta luctus elit. Morbi vel maximus nibh. Nullam in tempus
     mauris, in efficitur tortor. Pellentesque luctus tellus a mi pharetra luctus. Fusce mollis aliquet neque, vitae
     dignissim nisl luctus id. Maecenas iaculis tincidunt justo, a lacinia ipsum vestibulum eu. Donec eget fermentum
     odio, non imperdiet est. Nullam sodales dui at convallis aliquam.
   </p>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Donec erat sapien, elementum efficitur risus non, congue vehicula quam. Nullam sed lobortis enim. Phasellus eu nisi
     lacus. Maecenas vitae mauris eget turpis auctor feugiat. Nullam non quam egestas risus dapibus convallis eu at
     lacus. Phasellus pharetra faucibus ex ac placerat. Duis in metus quis eros tincidunt vehicula eget et enim.
     Curabitur semper porta risus, vel aliquam mauris rutrum non. Duis ac nunc non purus rutrum tincidunt quis sit amet
     orci.
   </p>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Quisque sit amet ornare metus, dignissim rhoncus enim. Vestibulum scelerisque diam ac interdum lacinia. Quisque eu
     mollis nibh, ac dignissim felis. Nam eget imperdiet diam, nec ultricies ex. Nunc auctor porta enim, viverra sagittis
     sapien volutpat eget. Vestibulum aliquam hendrerit est. Nunc imperdiet eros eget pulvinar imperdiet. Aliquam erat
@@ -258,15 +129,15 @@
     sodales eros. Quisque ut nisl dolor. Nullam egestas, nunc eget egestas aliquet, ipsum diam maximus libero, ac
     interdum urna diam ut ligula.
   </p>
-  <h3 id="contact">Contact</h3>
-  <p>
+  <h3 id="contact" class="mb-3 text-2xl font-semibold text-gray-800">Contact</h3>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Pellentesque venenatis ipsum elit, ac porttitor tellus luctus sit amet. Suspendisse consectetur porttitor
     scelerisque. Mauris id tortor id massa consequat consectetur. Sed consectetur cursus tellus, et condimentum mi
     tristique ac. Nam quis ultrices sem. Phasellus sed semper turpis. Fusce ultricies enim rutrum mauris mattis
     dignissim.
   </p>
 
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Quisque ut pretium mauris, eget fermentum dui. Donec sed quam leo. Pellentesque tristique nisi in odio consequat, in
     dictum velit gravida. Donec tincidunt libero justo, in pellentesque risus varius commodo. Integer malesuada, dui nec
     porta dapibus, justo risus feugiat tellus, a rutrum tellus orci in nisl. Morbi bibendum varius urna. Fusce ex elit,
@@ -276,14 +147,14 @@
     nec consectetur sodales. Nulla a ligula ac elit interdum imperdiet id quis enim. Fusce pharetra mollis sem a
     efficitur.
   </p>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Sed eget odio vel ipsum placerat dignissim non nec leo. Curabitur vestibulum, justo vitae commodo scelerisque,
     sapien eros placerat diam, vel dignissim justo metus vel urna. Curabitur id massa vel enim pharetra facilisis.
     Nullam interdum porttitor leo ac rutrum. Sed placerat porta laoreet. Aliquam consectetur, lacus nec feugiat
     fringilla, enim urna vulputate urna, ut consectetur elit nulla sed felis. Vestibulum ante ipsum primis in faucibus
     orci luctus et ultrices posuere cubilia curae;
   </p>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque egestas et massa ut
     efficitur. Donec elementum eleifend magna et pharetra. Sed convallis, justo quis mollis tempor, neque lectus rutrum
     lorem, quis eleifend est dolor id enim. Suspendisse potenti. Duis tempor, est egestas vulputate consectetur, eros
@@ -292,7 +163,7 @@
     mus. Integer vitae quam blandit turpis volutpat suscipit. Quisque eu pharetra sapien. Morbi vehicula felis at
     viverra rhoncus. Morbi eget nisl velit. Etiam ultricies tincidunt augue, ut eleifend augue posuere ut.
   </p>
-  <p>
+  <p class="mb-4 leading-relaxed text-gray-700">
     Sed ut arcu sodales, tincidunt lorem convallis, mollis est. Fusce eget lacinia arcu. Duis quis eros et libero
     tristique vehicula quis in massa. Nulla id lorem vulputate, commodo massa ut, maximus libero. Etiam mattis maximus
     risus, ut consectetur metus pharetra sed. Aenean tempor ut eros et tempor. Cras finibus lacus et ultrices rhoncus.
