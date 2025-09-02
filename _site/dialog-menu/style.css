@@ -1,0 +1,21 @@
+body {
+  --bs-border-radius: 2px;
+}
+
+dialog#main-menu {
+  width: 85%;
+  max-height: 80vh;
+  overflow: auto;
+  top: 1rem;
+  border: 0;
+}
+
+dialog#main-menu::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1200px) {
+  dialog#main-menu {
+    max-width: 1140px;
+  }
+}
