@@ -1,0 +1,102 @@
+.menu-open {
+  overflow: hidden;
+}
+.menu {
+  display: grid;
+  grid-template-areas:
+    "logo icons"
+    "menu menu"
+    "top-left top-left"
+    "top-right top-right";
+  grid-template-rows: min-content auto min-content min-content;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.menu-logo {
+  grid-area: logo;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  background: aliceblue;
+  padding: 1rem;
+}
+
+.menu-icons {
+  grid-area: icons;
+  text-align: right;
+  background: green;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding: 1rem;
+}
+
+.menu-close {
+  display: none;
+}
+
+.menu-open {
+  .menu-close {
+    display: block;
+  }
+
+  .menu-hamburger {
+    display: none;
+  }
+}
+
+.menu-top-left {
+  grid-area: top-left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: blueviolet;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.menu-top-right {
+  grid-area: top-right;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: bisque;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.menu-main {
+  grid-area: menu;
+  font-size: 1rem;
+  background: aquamarine;
+  padding: 1rem;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.menu-open .menu {
+  overflow: auto;
+}
+
+.menu-open .menu-top-left,
+.menu-open .menu-top-right,
+.menu-open .menu-main {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.main {
+  padding: 7rem 2rem 2rem;
+  font-size: clamp(1rem, 2vw, 2rem);
+}
