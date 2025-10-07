@@ -4,6 +4,8 @@ export default async function (eleventyConfig) {
   // Configure Eleventy
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
+  eleventyConfig.setLiquidOptions()
+
   eleventyConfig.setInputDirectory("_site");
   eleventyConfig.setOutputDirectory("_dist");
   eleventyConfig.addWatchTarget("_site/**/*.css");
