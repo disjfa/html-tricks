@@ -12,112 +12,113 @@
 </head>
 <body>
 <style>
-    body {
-  --bs-border-radius: 2px;
-}
-
-dialog#main-menu {
-  width: 85%;
-  max-height: 80vh;
-  overflow: auto;
-  top: 1rem;
-  border: 0;
-}
-
-dialog#main-menu::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-@media (min-width: 1200px) {
-  dialog#main-menu {
-    max-width: 1140px;
-  }
-}
-
+    {
+    %
+    include
+    './style.css'
+    %
+    }
 </style>
 
 <nav class="navbar bg-dark-subtle">
-    <div class="container">
-        <a href="/html-tricks/dialog-menu/" class="navbar-brand text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 2rem; height: 2rem">
-                <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                <path style="fill: var(--bs-primary)" d="M407 111C416.4 101.6 431.6 101.6 440.9 111L458.1 128.2C460 128.1 462 128 463.9 128L495.9 128C507.1 128 517.8 130.3 527.5 134.5L543 119C552.4 109.6 567.6 109.6 576.9 119C586.2 128.4 586.3 143.6 576.9 152.9L564 165.9C571.6 178.1 576 192.6 576 208C576 218.2 583.4 226.8 592.7 231C620.6 243.5 640 271.5 640 304C640 330.2 627.4 353.4 608 368L608 400C608 408.8 600.8 416 592 416L560 416C551.2 416 544 408.8 544 400L544 384L480 384L480 400C480 408.8 472.8 416 464 416L432 416C423.2 416 416 408.8 416 400L416 382.4C404.2 380 393.3 375 384 368C382.5 366.9 381.1 365.7 379.7 364.5C362.7 349.8 352 328.1 352 304C352 295.2 344.8 288 336 288C327.2 288 320 295.2 320 304C320 348.7 346.2 387.2 384 405.2L384 416C384 433.7 398.3 448 416 448L448 448L448 512C448 529.7 433.7 544 416 544L352 544C334.3 544 320 529.7 320 512L320 436C300.2 443.7 278.6 448 256 448C233.4 448 211.8 443.7 192 436L192 512C192 529.7 177.7 544 160 544L96 544C78.3 544 64 529.7 64 512L64 393.1L45.9 433.8C40.5 445.9 26.3 451.4 14.2 446C2.1 440.6-3.3 426.4 2.1 414.3L24 364.9C29.3 353 32 340.2 32 327.2C32 219.7 117.2 132 223.8 128.1L224 128L288 128C329.7 128 371.4 140.1 405.2 153.7C406.9 151.9 408.7 150.1 410.5 148.5L407 145C397.6 135.6 397.6 120.4 407 111.1zM480 296C480 282.7 469.3 272 456 272C442.7 272 432 282.7 432 296C432 309.3 442.7 320 456 320C469.3 320 480 309.3 480 296zM568 320C581.3 320 592 309.3 592 296C592 282.7 581.3 272 568 272C554.7 272 544 282.7 544 296C544 309.3 554.7 320 568 320zM480 208C480 199.2 472.8 192 464 192C455.2 192 448 199.2 448 208C448 216.8 455.2 224 464 224C472.8 224 480 216.8 480 208zM528 224C536.8 224 544 216.8 544 208C544 199.2 536.8 192 528 192C519.2 192 512 199.2 512 208C512 216.8 519.2 224 528 224z"></path>
-            </svg>
-            Brand name
-        </a>
-        <button commandfor="main-menu" command="show-modal" class="btn btn-outline-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 2rem; height: 2rem">
-                <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                <path style="fill: var(--bs-navbar-color)" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"></path>
-            </svg>
-        </button>
-    </div>
+  <div class="container">
+    <a href="/html-tricks/dialog-menu/" class="navbar-brand text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 2rem; height: 2rem">
+        <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path style="fill: var(--bs-primary)" d="M407 111C416.4 101.6 431.6 101.6 440.9 111L458.1 128.2C460 128.1 462 128 463.9 128L495.9 128C507.1 128 517.8 130.3 527.5 134.5L543 119C552.4 109.6 567.6 109.6 576.9 119C586.2 128.4 586.3 143.6 576.9 152.9L564 165.9C571.6 178.1 576 192.6 576 208C576 218.2 583.4 226.8 592.7 231C620.6 243.5 640 271.5 640 304C640 330.2 627.4 353.4 608 368L608 400C608 408.8 600.8 416 592 416L560 416C551.2 416 544 408.8 544 400L544 384L480 384L480 400C480 408.8 472.8 416 464 416L432 416C423.2 416 416 408.8 416 400L416 382.4C404.2 380 393.3 375 384 368C382.5 366.9 381.1 365.7 379.7 364.5C362.7 349.8 352 328.1 352 304C352 295.2 344.8 288 336 288C327.2 288 320 295.2 320 304C320 348.7 346.2 387.2 384 405.2L384 416C384 433.7 398.3 448 416 448L448 448L448 512C448 529.7 433.7 544 416 544L352 544C334.3 544 320 529.7 320 512L320 436C300.2 443.7 278.6 448 256 448C233.4 448 211.8 443.7 192 436L192 512C192 529.7 177.7 544 160 544L96 544C78.3 544 64 529.7 64 512L64 393.1L45.9 433.8C40.5 445.9 26.3 451.4 14.2 446C2.1 440.6-3.3 426.4 2.1 414.3L24 364.9C29.3 353 32 340.2 32 327.2C32 219.7 117.2 132 223.8 128.1L224 128L288 128C329.7 128 371.4 140.1 405.2 153.7C406.9 151.9 408.7 150.1 410.5 148.5L407 145C397.6 135.6 397.6 120.4 407 111.1zM480 296C480 282.7 469.3 272 456 272C442.7 272 432 282.7 432 296C432 309.3 442.7 320 456 320C469.3 320 480 309.3 480 296zM568 320C581.3 320 592 309.3 592 296C592 282.7 581.3 272 568 272C554.7 272 544 282.7 544 296C544 309.3 554.7 320 568 320zM480 208C480 199.2 472.8 192 464 192C455.2 192 448 199.2 448 208C448 216.8 455.2 224 464 224C472.8 224 480 216.8 480 208zM528 224C536.8 224 544 216.8 544 208C544 199.2 536.8 192 528 192C519.2 192 512 199.2 512 208C512 216.8 519.2 224 528 224z"></path>
+      </svg>
+      Brand name
+    </a>
+    <button commandfor="main-menu" command="show-modal" class="btn btn-outline-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 2rem; height: 2rem">
+        <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path style="fill: var(--bs-navbar-color)" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"></path>
+      </svg>
+    </button>
+  </div>
 </nav>
 <dialog id="main-menu" class="shadow rounded-1 p-3">
-    <div class="row pb-3">
-        <div class="col-12 text-end">
-            <button commandfor="main-menu" command="close" class="btn btn-outline-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 2rem; height: 2rem">
-                    <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                    <path style="fill: var(--bs-navbar-color)" d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"></path>
-                </svg>
-            </button>
-        </div>
+  <div class="row pb-3">
+    <div class="col-12 text-end">
+      <button commandfor="main-menu" command="close" class="btn btn-outline-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 2rem; height: 2rem">
+          <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path style="fill: var(--bs-navbar-color)" d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"></path>
+        </svg>
+      </button>
     </div>
-    <div class="row">
-        <div class="col-12 col-md-5">
-            <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action">An item</a>
-                <a href="#" class="list-group-item list-group-item-action">A second item</a>
-                <a href="#" class="list-group-item list-group-item-action">A third item</a>
-                <a href="#" class="list-group-item list-group-item-action">A fourth item</a>
-                <a href="#" class="list-group-item list-group-item-action">And a fifth one</a>
-            </div>
-        </div>
-        <div class="col-12 col-md-7">
-            <div class="px-3">
-                <h3 class="display-5">
-                    More about this
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi doloremque ea
-                    explicabo, iusto magnam nostrum perferendis, placeat possimus quas temporibus? Aspernatur eaque
-                    eligendi enim nisi reprehenderit voluptatem?
-                </p>
-            </div>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-5">
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action">An item</a>
+        <a href="#" class="list-group-item list-group-item-action">A second item</a>
+        <a href="#" class="list-group-item list-group-item-action">A third item</a>
+        <a href="#" class="list-group-item list-group-item-action">A fourth item</a>
+        <a href="#" class="list-group-item list-group-item-action">And a fifth one</a>
+      </div>
     </div>
+    <div class="col-12 col-md-7">
+      <div class="px-3">
+        <h3 class="display-5">
+          More about this
+        </h3>
+        <p>
+          Here you can add more info about the site, maybe a short description, a logo, address?
+        </p>
+        <h5>More text!</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis,placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis,placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
+          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
+          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+        </p>
+      </div>
+    </div>
+  </div>
 </dialog>
+
+<div class="container py-4">
+  <h1>Dialog as menu</h1>
+  <p>
+    This is a quick example how to use a dialog for the menu. Just move the entire menu into the
+    hamburger, we know what that does. Just use it. This is how you can create more in the menu and
+    keep the site clean and simple.
+  </p>
+  <p>
+    Also, use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API">invoker
+    api</a> to open the dialog. It's really cool 😉
+  </p>
+</div>
 
 </body>
 </html>

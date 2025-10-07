@@ -6,29 +6,101 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | Html tricks</title>
     
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+    
     
 </head>
 <body>
 
+<style>
+    :root {
+        --bs-border-radius: .25rem;
+        --bs-border-width: 0;
+        --bs-body-bg: #f8f9fa;
+        --bs-box-shadow: 0 0 3rem rgba(0, 0, 0, 0.05);
+    }
+</style>
 <div class="container">
-  <h1>All Pages</h1>
-  <ul><li>
-      <a href="/html-tricks/">Home</a>
-    </li><li>
-      <a href="/html-tricks/basic-menu-tailwind/">Basic Menu, but with tailwind</a>
-    </li><li>
-      <a href="/html-tricks/basic-menu-tailwind/_menu/"></a>
-    </li><li>
-      <a href="/html-tricks/basic-menu/">Basic Menu</a>
-    </li><li>
-      <a href="/html-tricks/dialog-menu/">Dialog Menu</a>
-    </li><li>
-      <a href="/html-tricks/bigger-setup/">Bigger setup, lets build a menu</a>
-    </li><li>
-      <a href="/html-tricks/bigger-setup/menu/"></a>
-    </li><li>
-      <a href="/html-tricks/bigger-setup/mobile/">Bigger setup, lets build a menu. Start with mobile first.</a>
-    </li></ul>
+  <h1>Html tricks</h1>
+  <p>
+    Oh hi there, didn't see you there! I hope you are having a good day. I am going to show you some
+    of the tricks I have learned over the years. I hope you enjoy them.
+  </p>
+  <p>
+    We started with a nice selection of menu tricks. There are many on the internet. But we wanted
+    to re-learn how the internet works today. Olden days of making hard and weird setups can be
+    over. So we have some demo's.
+  </p>
+
+  <div class="row">
+    <div class="col-md-4 my-2">
+      <div class="card shadow h-100">
+        <div class="card-body bg-light d-flex flex-column">
+          <h5 class="card-title">
+            Basic Menu, but with tailwind
+          </h5>
+          <div class="d-flex flex-wrap gap-1"><small class="badge text-bg-secondary">menu</small></div>
+          <div class="flex-grow-1 py-2">
+            <p class="card-text">Basic menu, but using tailwind.</p>
+          </div>
+          <a href="/html-tricks/basic-menu-tailwind/" class="card-link">
+            Read more &raquo;
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 my-2">
+      <div class="card shadow h-100">
+        <div class="card-body bg-light d-flex flex-column">
+          <h5 class="card-title">
+            Basic Menu
+          </h5>
+          <div class="d-flex flex-wrap gap-1"><small class="badge text-bg-secondary">menu</small></div>
+          <div class="flex-grow-1 py-2">
+            <p class="card-text">A setup for a basic menu</p>
+          </div>
+          <a href="/html-tricks/basic-menu/" class="card-link">
+            Read more &raquo;
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 my-2">
+      <div class="card shadow h-100">
+        <div class="card-body bg-light d-flex flex-column">
+          <h5 class="card-title">
+            Dialog Menu
+          </h5>
+          <div class="d-flex flex-wrap gap-1"><small class="badge text-bg-secondary">menu</small><small class="badge text-bg-secondary">dialog</small></div>
+          <div class="flex-grow-1 py-2">
+            <p class="card-text">Setup a menu using a dialog.</p>
+          </div>
+          <a href="/html-tricks/dialog-menu/" class="card-link">
+            Read more &raquo;
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 my-2">
+      <div class="card shadow h-100">
+        <div class="card-body bg-light d-flex flex-column">
+          <h5 class="card-title">
+            Bigger setup, lets build a menu
+          </h5>
+          <div class="d-flex flex-wrap gap-1"><small class="badge text-bg-secondary">menu</small></div>
+          <div class="flex-grow-1 py-2">
+            <p class="card-text">Lets build a bigger menu.</p>
+          </div>
+          <a href="/html-tricks/bigger-setup/" class="card-link">
+            Read more &raquo;
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
 </div>
 
 </body>
