@@ -1,0 +1,58 @@
+main {
+  scroll-timeline: --main-timeline;
+}
+
+div {
+  animation: background-animation linear;
+  animation-timeline: scroll(nearest y);
+}
+
+@layer animations {
+  @keyframes background-animation {
+    0% {
+      background-color: palegoldenrod;
+    }
+    100% {
+      background-color: magenta;
+    }
+  }
+}
+
+@layer page-setup {
+  :root {
+    --elSize: 50px;
+  }
+
+  main {
+    height: 90vh;
+    overflow: scroll;
+    border: 1px solid;
+    margin: 5vh auto;
+  }
+
+  div {
+    height: 400vh;
+    width: 400vw;
+  }
+
+  div::after {
+    content: "";
+    border: 1px solid red;
+    height: var(--elSize);
+    width: var(--elSize);
+    position: absolute;
+    border-radius: 20px;
+    corner-shape: superellipse(-4);
+  }
+}
+
+@layer no-support {
+  @supports not (scroll-timeline: --main-timeline) {
+    body::before {
+      content: "Your browser doesn't support scroll-driven animations.";
+      background-color: wheat;
+      display: block;
+      text-align: center;
+    }
+  }
+}

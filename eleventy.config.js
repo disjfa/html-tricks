@@ -4,11 +4,13 @@ export default async function (eleventyConfig) {
   // Configure Eleventy
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
-  eleventyConfig.setLiquidOptions()
+  eleventyConfig.setLiquidOptions();
 
   eleventyConfig.setInputDirectory("_site");
   eleventyConfig.setOutputDirectory("_dist");
+  eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addWatchTarget("_site/**/*.css");
+  eleventyConfig.addWatchTarget("css/**/*.css");
 }
 export const config = {
   pathPrefix: "/html-tricks/",
