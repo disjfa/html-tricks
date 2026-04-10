@@ -1,0 +1,137 @@
+:root {
+  --font-serif:
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --container-max-width: 1200px;
+  --light-bg: #fff;
+  --light-text: #333;
+  --dark-bg: #333;
+  --dark-text: #fff;
+  --border-radius: 4px;
+  --light-box-shadow: rgba(0, 0, 0, 0.05);
+  --dark-box-shadow: rgba(255, 255, 255, 0.05);
+  --h1-size: clamp(2rem, 4vw + 1rem, 3rem);
+  --h2-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  --h3-size: clamp(1.5rem, 2.5vw + 1rem, 2rem);
+  --h4-size: clamp(1.375rem, 2vw + 1rem, 1.75rem);
+  --h5-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+  --h6-size: clamp(1.125rem, 1vw + 1rem, 1.25rem);
+  --link-color: #3498db;
+  --link-color-strong: #2980b9;
+  --badge-bg: #3498db;
+  --badge-border: #2980b9;
+  --badge-text: #ecf0f1;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  color: light-dark(var(--light-text), var(--dark-text));
+  font-family: var(--font-serif), serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0 0 0.5em;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+h4 {
+  font-size: var(--h4-size);
+}
+
+h5 {
+  font-size: var(--h5-size);
+}
+
+h6 {
+  font-size: var(--h6-size);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:link {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-color-strong);
+}
+
+a:hover,
+a:focus-visible,
+a:active {
+  color: var(--link-color-strong);
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.grid-columns {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: grid;
+  gap: 1rem;
+}
+
+.item {
+  padding: 1rem;
+  box-shadow: 0 0 3rem
+    light-dark(var(--light-box-shadow), var(--dark-box-shadow));
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.3rem;
+  border: 1px solid var(--badge-border);
+  border-radius: var(--border-radius);
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 0.75;
+}

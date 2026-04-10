@@ -11,13 +11,30 @@
     
 </head>
 <body>
+
 <style>
-    {
-    %
-    include
-    './style.css'
-    %
-    }
+  body {
+  --bs-border-radius: 2px;
+}
+
+dialog#main-menu {
+  width: 85%;
+  max-height: 80vh;
+  overflow: auto;
+  top: 1rem;
+  border: 0;
+}
+
+dialog#main-menu::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1200px) {
+  dialog#main-menu {
+    max-width: 1140px;
+  }
+}
+
 </style>
 
 <nav class="navbar bg-dark-subtle">
@@ -37,7 +54,7 @@
     </button>
   </div>
 </nav>
-<dialog id="main-menu" class="shadow rounded-1 p-3">
+<dialog id="main-menu" class="rounded-1 p-3 shadow">
   <div class="row pb-3">
     <div class="col-12 text-end">
       <button commandfor="main-menu" command="close" class="btn btn-outline-secondary">
@@ -49,7 +66,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-5">
+    <div class="col-md-5 col-12">
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action">An item</a>
         <a href="#" class="list-group-item list-group-item-action">A second item</a>
@@ -58,49 +75,55 @@
         <a href="#" class="list-group-item list-group-item-action">And a fifth one</a>
       </div>
     </div>
-    <div class="col-12 col-md-7">
+    <div class="col-md-7 col-12">
       <div class="px-3">
-        <h3 class="display-5">
-          More about this
-        </h3>
+        <h3 class="display-5">More about this</h3>
         <p>
-          Here you can add more info about the site, maybe a short description, a logo, address?
+          Here you can add more info about the site, maybe a short description,
+          a logo, address?
         </p>
         <h5>More text!</h5>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis, placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis,placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis,placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis,placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis,placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis, placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis, placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis, placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, aut commodi
-          doloremque ea explicabo, iusto magnam nostrum perferendis, placeat possimus quas
-          temporibus? Aspernatur eaque eligendi enim nisi reprehenderit voluptatem?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          atque, aut commodi doloremque ea explicabo, iusto magnam nostrum
+          perferendis, placeat possimus quas temporibus? Aspernatur eaque
+          eligendi enim nisi reprehenderit voluptatem?
         </p>
       </div>
     </div>
@@ -110,13 +133,14 @@
 <div class="container py-4">
   <h1>Dialog as menu</h1>
   <p>
-    This is a quick example how to use a dialog for the menu. Just move the entire menu into the
-    hamburger, we know what that does. Just use it. This is how you can create more in the menu and
-    keep the site clean and simple.
+    This is a quick example how to use a dialog for the menu. Just move the
+    entire menu into the hamburger, we know what that does. Just use it. This is
+    how you can create more in the menu and keep the site clean and simple.
   </p>
   <p>
-    Also, use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API">invoker
-    api</a> to open the dialog. It's really cool 😉
+    Also, use the
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API">invoker api</a>
+    to open the dialog. It's really cool 😉
   </p>
 </div>
 
