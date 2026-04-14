@@ -11,6 +11,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addWatchTarget("_site/**/*.css");
   eleventyConfig.addWatchTarget("css/**/*.css");
+  eleventyConfig.addWatchTarget("_site/**/*.js");
 }
 export const config = {
   pathPrefix: "/html-tricks/",
